@@ -9,7 +9,7 @@ def FDM_implicit(S0, K, r, q, sigma, T, Smin, Smax, m, n, callorput, EorA):
             return max(S-K, 0)
         if callorput == 'put':
             return max(K-S, 0)
-
+        
     # 建立payoff array
     payoff_array = np.zeros([m-1, n+1])
     # 輸入boundary condition
@@ -17,7 +17,7 @@ def FDM_implicit(S0, K, r, q, sigma, T, Smin, Smax, m, n, callorput, EorA):
         Sij = Smax * i / m
         payoff_array[(m-1)-i][n] = payoff(Sij)
     # print(price_array)
-
+    # hihi
     def a(j):
         return (r-q)/2 * j * dt - 0.5 * sigma**2 * j**2 * dt
     def b(j):
